@@ -2,7 +2,13 @@
 
 D := $(CURDIR)/debian/netbase
 
-build:
+clean:
+	dh_testdir
+	dh_clean
+
+build: build-arch build-indep
+build-arch:
+build-indep:
 	dh_testdir
 
 #	check for duplicate etc-services entries and abort if any found
@@ -17,12 +23,6 @@ build:
 	  echo "  None found"; \
 	fi
 
-clean:
-	dh_testdir
-	dh_testroot
-
-	dh_clean
-
 install: build
 	dh_testdir
 	dh_testroot
@@ -33,20 +33,20 @@ install: build
 	install -o root -g root -m 0644 etc-rpc $D/etc/rpc
 	install -o root -g root -m 0644 etc-services $D/etc/services
 
-binary-indep: build install
+binary-indep: install
 	dh_testdir
 	dh_testroot
 	dh_installchangelogs
 	dh_installdocs
-	dh_installinit --noscripts --init-script=networking
 	dh_compress
 	dh_fixperms
 	dh_installdeb
 	dh_gencontrol
+	dh_md5sums
 	dh_builddeb
 
 binary-arch:
 
-binary: binary-indep
+binary: binary-arch binary-indep
 
-.PHONY: build clean binary-indep binary-arch binary install
+.PHONY: clean build build-arch build-indep binary binary-arch binary-indep install

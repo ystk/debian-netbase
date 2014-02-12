@@ -1,3 +1,41 @@
+netbase (5.0) unstable; urgency=medium
+
+  * Removed the init script, added Breaks: ifupdown (<< 0.7~rc1).
+    (Closes: #595113)
+  * etc-services: added asf-rmcp (623/udp). (Closes: #657152)
+  * etc-services: added iscsi-target (3260/tcp). (Closes: #657178)
+  * etc-services: added console (782/tcp). (Closes: #658077)
+  * Starting from this release, TCP/UDP ports will be added only for the
+    actually implemented protocol even if IANA nowadays assigns both.
+  * Removed the obsolete dependency on initscripts.
+
+ -- Marco d'Itri <md@linux.it>  Mon, 14 May 2012 01:11:08 +0200
+
+netbase (4.47) unstable; urgency=low
+
+  * etc-services: added groupwise (1677). (Closes: #633375)
+  * etc-services: removed clc-build-daemon (8990/tcp) because it is
+    unofficial and invalid accordingly to RFC 6335. (Closes: #641291)
+  * etc-services: swapped the www name with its alias http, since the latter
+    is the official name.
+  * s/_/-/ for the following service names, to comply with RFC 6335:
+    pipe_server, sge_qmaster, sge_execd, kerberos_master, passwd_server,
+    krb_prop, moira_db, moira_update, moira_ureg. The old names have
+    been retained as aliases.
+
+ -- Marco d'Itri <md@linux.it>  Sun, 30 Oct 2011 16:22:13 +0100
+
+netbase (4.46) unstable; urgency=medium
+
+  * etc-protocols: added mobility-header (135). (Closes: #630239)
+  * etc-services: added f5-globalsite (2792), f5-iquery (4353).
+    (Closes: #630110)
+  * etc-services: changed the description of domain. (Closes: #628023)
+  * etc-services: removed the duplicated descriptions from UDP ports.
+  * Added md5sums. (Closes: #616714)
+
+ -- Marco d'Itri <md@linux.it>  Sun, 26 Jun 2011 13:49:38 +0200
+
 netbase (4.45) unstable; urgency=high
 
   * etc-services: added 4691 (mtn). (Closes: #607858)
