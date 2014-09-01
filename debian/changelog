@@ -1,3 +1,26 @@
+netbase (5.2) unstable; urgency=low
+
+  * etc-services: added ipsec-nat-t (4500/udp). (Closes: #718210)
+  * etc-services: added syslog-tls (6514/tcp). (Closes: #729565)
+  * etc-services: added dicom (11112/tcp). (Closes: #710361)
+
+ -- Marco d'Itri <md@linux.it>  Mon, 30 Dec 2013 04:34:01 +0100
+
+netbase (5.1) unstable; urgency=low
+
+  * etc-services: removed console (782/tcp).
+    Reverted because #658077 was totally bogus: this entry is not useful.
+  * etc-services: added urd (465/tcp). ssmtp and smtps kept as aliases.
+    (Closes: #703175)
+  * etc-services: added db-lsp (17500/tcp). (Closes: #695708)
+  * etc-protocols: added hopopt (0). (Closes: #675339)
+  * Removed ip6-localnet and ip6-mcastprefix from the default /etc/hosts
+    created by postinst because they have no purpose. (Closes: #688090)
+  * Made the package Multi-Arch foreign. (Closes: #688396)
+  * Slightly raised the ifupdown Breaks version to match Ubuntu.
+
+ -- Marco d'Itri <md@linux.it>  Tue, 02 Apr 2013 02:31:27 +0200
+
 netbase (5.0) unstable; urgency=medium
 
   * Removed the init script, added Breaks: ifupdown (<< 0.7~rc1).
