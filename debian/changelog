@@ -1,3 +1,9 @@
+netbase (5.3) unstable; urgency=medium
+
+  * etc-services: added amqps (5671/tcp).
+
+ -- Marco d'Itri <md@linux.it>  Tue, 21 Oct 2014 02:25:34 +0200
+
 netbase (5.2) unstable; urgency=low
 
   * etc-services: added ipsec-nat-t (4500/udp). (Closes: #718210)

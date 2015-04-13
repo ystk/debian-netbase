@@ -2,16 +2,15 @@ Source: netbase
 Section: admin
 Priority: important
 Maintainer: Marco d'Itri <md@linux.it>
-Standards-Version: 3.9.5
+Standards-Version: 3.9.6
 Build-Depends: debhelper (>= 9)
-Vcs-Git: git://git.debian.org/users/md/netbase.git
-Vcs-Browser: http://anonscm.debian.org/gitweb/?p=users/md/netbase.git
+Vcs-Git: git://anonscm.debian.org/users/md/netbase.git
+Vcs-Browser: http://anonscm.debian.org/cgit/users/md/netbase.git
 
 Package: netbase
 Architecture: all
 Multi-Arch: foreign
 Depends: lsb-base (>= 3.0-6), ${misc:Depends}
-Conflicts: openbsd-inetd (<< 0.20050402-3), inetutils-inetd (<< 2:1.4.3+20060719-3)
 Breaks: ifupdown (<< 0.7)
 Recommends: ifupdown
 Description: Basic TCP/IP networking system
